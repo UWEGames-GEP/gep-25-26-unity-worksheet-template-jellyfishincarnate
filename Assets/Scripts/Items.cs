@@ -4,21 +4,10 @@ using UnityEngine;
 public class Items : MonoBehaviour
 {
 
-    public List<string> items = new List<string>();
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+   public List<string> items = new List<string>();
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
 
 
-    }
+
 }

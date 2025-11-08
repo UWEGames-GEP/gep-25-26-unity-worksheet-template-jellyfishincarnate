@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
 
     public List<string> items = new List<string>();
-
+    private GameManager gameManager;
 
     public void AddToInventory(string itemName)
     {
@@ -22,19 +22,24 @@ public class Inventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             AddToInventory("Test item");
         }
-        if(Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             RemoveFromInventory("Test item");
         }
     }
+
+  //  private void OnControllerColliderHit(ControllerColliderHit hit)
+  //  {
+        
+   // }
 }
