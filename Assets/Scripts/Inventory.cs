@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 
     public List<string> items = new List<string>();
     private GameManager gameManager;
+   
 
     public void AddToInventory(string itemName)
     {
@@ -38,8 +39,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
-  //  private void OnControllerColliderHit(ControllerColliderHit hit)
-  //  {
-        
-   // }
+  private void OnControllerColliderHit(ControllerColliderHit hit)
+  {
+         Items collisionItem = hit.gameObject.GetComponent<Items>();
+        if (collisionItem != null)
+        {
+            items.Add(collisionItem.name);
+            Destroy(collisionItem.gameObject);
+        }
+   }
 }
