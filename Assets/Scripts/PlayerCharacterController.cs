@@ -1,14 +1,38 @@
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static GameManager;
 
-public class PlayerController : ThirdPersonController
+public class PlayerCharacterController : ThirdPersonController
 {
-    private void OnPause(InputValue value)
+    [SerializeField]StarterAssetsInputs starterAssets;
+    [SerializeField]GameManager gameManager;
+    private void Start()
     {
-        if(value.isPressed)
+        starterAssets = GameObject.FindAnyObjectByType<StarterAssetsInputs>();
+        gameManager = GameObject.FindAnyObjectByType<GameManager>();
+    }
+
+    private void LateUpdate()
+    {
+        if (starterAssets != null)
         {
-            Debug.Log("Pause Game.");
+            if (starterAssets.pause && gameManager.state == GameState.GAMEPLAY)
+            {
+                gameManager.state = GameState.PAUSE;
+                gameManager.hasChangedState = true;
+                starterAssets.pause = false;
+            }
+            else if (gameManager.state == GameState.PAUSE)
+            {
+                if (starterAssets.pause)
+                {
+                    gameManager.state = GameState.GAMEPLAY;
+                    gameManager.hasChangedState = true;
+                    starterAssets.pause = false;
+
+                }
+            }
         }
     }
 }
