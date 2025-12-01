@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Remove Item",
+                    "type": "Button",
+                    "id": "ac981d55-ca9e-480e-8cff-6619dec60185",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -179,7 +188,7 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "InvertVector2(invertX=false),StickDeadzone,ScaleVector2(x=300,y=300)",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -236,6 +245,17 @@
                     "processors": "",
                     "groups": ";KeyboardMouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8b1ac55-aa71-4112-8249-8ab16c9f9fab",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Remove Item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

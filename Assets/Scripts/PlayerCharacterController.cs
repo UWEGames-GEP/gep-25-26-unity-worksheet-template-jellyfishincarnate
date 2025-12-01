@@ -7,11 +7,11 @@ public class PlayerCharacterController : ThirdPersonController
 {
     [SerializeField]StarterAssetsInputs starterAssets;
     [SerializeField]GameManager gameManager;
-    private void Start()
-    {
-        starterAssets = GameObject.FindAnyObjectByType<StarterAssetsInputs>();
-        gameManager = GameObject.FindAnyObjectByType<GameManager>();
-    }
+    //private void Start()
+    //{
+    //    starterAssets = GameObject.FindAnyObjectByType<StarterAssetsInputs>();
+    //    gameManager = GameObject.FindAnyObjectByType<GameManager>();
+    //}
 
     private void LateUpdate()
     {
@@ -35,4 +35,15 @@ public class PlayerCharacterController : ThirdPersonController
             }
         }
     }
+
+    private void OnRemoveItem(InputValue value)
+    {
+        if(value.isPressed)
+        {
+            Debug.Log("Remove Item");
+           // GetComponent<Inventory>().RemoveItemFromInventory();
+        }
+    }
+
+
 }

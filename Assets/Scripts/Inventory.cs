@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
         items.Add(itemName);
     }
 
-    public void RemoveFromInventory(string itemName)
+    public void RemoveItemFromInventory(string itemName)
     {
         items.Remove(itemName);
     }
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.P))
         {
-            RemoveFromInventory("Test item");
+            RemoveItemFromInventory("Test item");
         }
     }
 
