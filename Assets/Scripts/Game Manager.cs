@@ -11,6 +11,7 @@ public enum GameState
 }
 public GameState state;
 public bool hasChangedState = true;
+public GameObject inventoryUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,22 +22,7 @@ public bool hasChangedState = true;
     // Update is called once per frame
     void Update()
     {
-        //if (state == GameState.GAMEPLAY)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Escape))
-        //    {
-        //        state = GameState.PAUSE;
-        //        hasChangedState = true;
-        //    }
-        //}
-        //else if (state == GameState.PAUSE)
-        //{
-        //    if(Input.GetKeyDown(KeyCode.Escape))
-        //    {
-        //        state = GameState.GAMEPLAY;
-        //        hasChangedState = true;
-        //    }
-        //}
+      
     }
     private void LateUpdate()
     {
@@ -47,10 +33,14 @@ public bool hasChangedState = true;
             if (state == GameState.GAMEPLAY)
             {
                 Time.timeScale = 1.0f;
+                inventoryUI.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else if (state == GameState.PAUSE)
             {
                 Time.timeScale = 0.0f;
+                inventoryUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }

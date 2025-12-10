@@ -254,7 +254,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "Remove Item",
                     "isComposite": false,
                     "isPartOfComposite": false
